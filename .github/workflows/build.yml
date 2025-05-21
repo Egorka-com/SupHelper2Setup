@@ -1,0 +1,56 @@
+name: Build WixSharp Installer and Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+env:
+  INSTALLER_NAME: SupHelper2Setup.msi
+  OUTPUT_DIR: output
+  ProjectName: Wix4Setup
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Install WiX Toolset
+        uses: chocolatey-community/choco-action@v1
+        with:
+          args: install wixtoolset -y
+
+      - name: Restore NuGet
+        run: dotnet restore ${{ProjectName}}.csproj
+
+      - name: Build Installer
+        run: dotnet run --project ${{ProjectName}}.csproj -c Release
+
+      - name: Copy Installer
+        run: |
+          mkdir ${{ env.OUTPUT_DIR }}
+          copy output\Release\*.msi ${{ env.OUTPUT_DIR }}\${{ env.INSTALLER_NAME }}
+
+      - name: Generate version.json
+        run: |
+          echo {
+            \"version\": \"${{ github.ref_name }}\",
+            \"installerUrl\": \"https://github.com/${{ github.repository }}/releases/download/${{ github.ref_name }}/${{ env.INSTALLER_NAME }}\"
+          } > ${{ env.OUTPUT_DIR }}/version.json
+
+      - name: Upload to GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            ${{ env.OUTPUT_DIR }}/${{ env.INSTALLER_NAME }}
+            ${{ env.OUTPUT_DIR }}/version.json
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

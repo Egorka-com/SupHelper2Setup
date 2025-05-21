@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "8X2gFKgYA2k=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\PC14-user\\Desktop\\Егор\\My stuff\\c#\\Suphelper2\\Wix4Setup\\Wix4Setup.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\PC14-user\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\PC14-user\\.nuget\\packages\\wixsharp\\1.0.22\\wixsharp.1.0.22.nupkg.sha512",
+    "C:\\Users\\PC14-user\\.nuget\\packages\\wixsharp.clrdialog\\1.0.26\\wixsharp.clrdialog.1.0.26.nupkg.sha512",
+    "C:\\Users\\PC14-user\\.nuget\\packages\\wixsharp_wix4\\2.6.2\\wixsharp_wix4.2.6.2.nupkg.sha512",
+    "C:\\Users\\PC14-user\\.nuget\\packages\\wixsharp_wix4.bin\\2.6.2\\wixsharp_wix4.bin.2.6.2.nupkg.sha512",
+    "C:\\Users\\PC14-user\\.nuget\\packages\\wixtoolset.dtf.windowsinstaller\\4.0.1\\wixtoolset.dtf.windowsinstaller.4.0.1.nupkg.sha512",
+    "C:\\Users\\PC14-user\\.nuget\\packages\\wixtoolset.mba.core\\4.0.1\\wixtoolset.mba.core.4.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

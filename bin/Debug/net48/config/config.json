@@ -1,0 +1,13 @@
+{
+    "Guid": "5d0f56c2-bbd6-4f70-aefe-217de9b19c67",
+    "AppDir": "..\\Suphelper2\\bin\\Release\\net8.0-windows\\publish\\",
+    "MainFile": "SupHelper2.exe",
+    "Dependences": [ "Suphelper2.dll", "Suphelper2.runtimeconfig.json" ],
+    "TargetDir": "ChatApp\\SupHelper2\\",
+    "ProductName": "SupHelper2",
+    "ProductVersion": "1.0.0",
+    "Author": "ChatAppDev",
+    "IconPath": "icon.ico",
+    "Description": "SupHelper2",
+    "Language": "ru-ru"
+}
