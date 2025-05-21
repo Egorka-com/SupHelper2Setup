@@ -8,7 +8,7 @@ on:
 env:
   INSTALLER_NAME: SupHelper2Setup.msi
   OUTPUT_DIR: output
-  ProjectName: Wix4Setup
+  PROJECT_NAME: Wix4Setup
 
 jobs:
   build:
@@ -29,10 +29,10 @@ jobs:
           args: install wixtoolset -y
 
       - name: Restore NuGet
-        run: dotnet restore ${{ProjectName}}.csproj
+        run: dotnet restore ${{ PROJECT_NAME }}.csproj
 
       - name: Build Installer
-        run: dotnet run --project ${{ProjectName}}.csproj -c Release
+        run: dotnet run --project ${{ PROJECT_NAME }}.csproj -c Release
 
       - name: Copy Installer
         run: |
