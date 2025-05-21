@@ -29,10 +29,10 @@ jobs:
           args: install wixtoolset -y
 
       - name: Restore NuGet
-        run: dotnet restore ${{ PROJECT_NAME }}.csproj
+        run: dotnet restore ${{ env.PROJECT_NAME }}.csproj
 
       - name: Build Installer
-        run: dotnet run --project ${{ PROJECT_NAME }}.csproj -c Release
+        run: dotnet run --project ${{ env.PROJECT_NAME }}.csproj -c Release
 
       - name: Copy Installer
         run: |
