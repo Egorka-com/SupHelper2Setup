@@ -23,11 +23,6 @@ jobs:
         with:
           dotnet-version: '8.0.x'
 
-      - name: Install WiX Toolset via Chocolatey
-        run: |
-            choco install wixtoolset -y
-            refreshenv
-
       - name: Restore NuGet
         run: dotnet restore ${{ env.PROJECT_NAME }}.csproj
 
